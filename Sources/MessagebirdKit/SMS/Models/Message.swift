@@ -78,17 +78,17 @@ public struct MessageRecipientItem: Codable {
     /// The count of total messages send. Personalisation not taken in account.
     public var messagePartCount: Int
     /// The name of the recipient’s original country, based on MSISDN.
-    public var recipientCountry: String
+    public var recipientCountry: String?
     /// The prefix code for the recipient’s original country, based on MSISDN.
-    public var recipientCountryPrefix: Int
+    public var recipientCountryPrefix: Int?
     /// The name of the operator of the recipient. Identified by MCCMNC of the message.
-    public var recipientOperator: String
+    public var recipientOperator: String?
     /// The length of the message in characters. Depends on the message datacoding.
     public var messageLength: Int
     /// The details about the message status. Possible values: `successfully delivered`, `pending DLR`, `DLR not received`, `incorrect number`, `unknown subscriber`, `expired`, `timeout`, and `generic delivery failure`.
     public var statusReason: MessageRecipientItemStatusReason
     /// A hashmap with extra information about how much the message costs.
-    public var price: MessageRecipientItemPrice
+    public var price: MessageRecipientItemPrice?
     /// The code of the operator of the message sender. It could have null value if the message isn’t delivered yet.
     public var mccmnc: String?
     /// The MCC (Mobile Country Code) part of MCCMNC.
