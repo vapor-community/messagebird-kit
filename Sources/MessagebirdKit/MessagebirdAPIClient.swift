@@ -83,7 +83,7 @@ public class MessagebirdAPIClient {
         
         let responseData = Data(byteBuffer.readableBytesView)
         
-        guard response.status == .ok else {
+        guard [.ok, .created, .noContent].contains(response.status) else {
             throw try decoder.decode(MessageBirdAPIError.self, from: responseData)
         }
         return try decoder.decode(M.self, from: responseData)
