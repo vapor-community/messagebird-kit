@@ -12,7 +12,7 @@ public class MessagebirdClient {
     public var sms: SMSRoutes
     let apiClient: MessagebirdAPIClient
     
-    init(client: HTTPClient, accessKey: String) {
+    public init(client: HTTPClient, accessKey: String) {
         apiClient = MessagebirdAPIClient(client: client, accessKey: accessKey)
         sms = SMSRoutes(client: apiClient)
     }
